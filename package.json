@@ -1,5 +1,5 @@
 {
-  "name": "react-facebook-login",
+  "name": "react-facebook-login-auth",
   "version": "3.1.0",
   "description": "A Component React for Facebook Login",
   "main": "dist/facebook-login.js",
