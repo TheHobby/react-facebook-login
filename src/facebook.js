@@ -86,11 +86,11 @@ class FacebookLogin extends React.Component {
   };
 
   click = () => {
-    const { scope, appId } = this.props;
+    const { scope, appId, auth_type } = this.props;
     if (navigator.userAgent.match('CriOS')) {
-      window.location.href = `https://www.facebook.com/dialog/oauth?client_id=${appId}&redirect_uri=${window.location.href}&state=facebookdirect&${scope}`;
+      window.location.href = `https://www.facebook.com/dialog/oauth?client_id=${appId}&redirect_uri=${window.location.href}&state=facebookdirect&${scope}&auth_type=${auth_type}`;
     } else {
-      window.FB.login(this.checkLoginState, { scope });
+      window.FB.login(this.checkLoginState, { scope: scope, return_scopes: true, auth_type: auth_type });
     }
   };
 
